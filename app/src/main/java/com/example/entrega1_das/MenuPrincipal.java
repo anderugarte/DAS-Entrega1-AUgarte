@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 public class MenuPrincipal extends AppCompatActivity {
 
     RecyclerView rv = (RecyclerView) findViewById(R.id.lPelis);
+
+    miBD GestorDB = new miBD (this, "NombreBD", null, 1);
+    SQLiteDatabase bd = GestorDB.getWritableDatabase();
 
     int[] imagenes= { };
     String[] titulos={ };
