@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.entrega1_das.R;
@@ -15,10 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button bIS = findViewById(R.id.bIS);
-        Button bR = findViewById(R.id.bR);
+        Button bIS = (Button) findViewById(R.id.bIS);
+        Button bR = (Button) findViewById(R.id.bR);
 
-        Intent i = new Intent (this, Registro.class);
-        startActivity(i);
+        bR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent (getBaseContext(), Registro.class);
+                startActivity(i);
+            }
+        });
     }
 }
