@@ -19,11 +19,19 @@ public class MainActivity extends AppCompatActivity {
         Button bIS = (Button) findViewById(R.id.bIS);
         Button bR = (Button) findViewById(R.id.bR);
 
+        bIS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent is = new Intent (getBaseContext(), InicioSesion.class);
+                startActivity(is);
+            }
+        });
+
         bR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (getBaseContext(), Registro.class);
-                startActivity(i);
+                Intent r = new Intent (getBaseContext(), Registro.class);
+                startActivity(r);
             }
         });
     }

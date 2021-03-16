@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_filmometry_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Entrega1_DAS">
-        <activity android:name=".RegistroInicioSesion.Registro"></activity>
+        <activity android:name=".RegistroInicioSesion.InicioSesion"></activity>
+        <activity android:name=".RegistroInicioSesion.Registro" />
         <activity android:name=".Principal.MenuPrincipal" />
         <activity android:name=".RegistroInicioSesion.MainActivity">
             <intent-filter>
