@@ -8,11 +8,31 @@ import androidx.annotation.Nullable;
 
 public class miBD extends SQLiteOpenHelper {
 
-    public miBD (@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context,name,factory,version);
+    private static miBD mInstance = null;
+
+    private static final String DATABASE_NAME = "FilmometryDB";
+    private static final int DATABASE_VERSION = 1;
+
+    private Context mContext;
+
+    public static miBD getInstance(@Nullable Context ctx) {
+        if (mInstance == null) {mInstance = new miBD(ctx.getApplicationContext());}
+        return mInstance;
     }
 
+    private miBD (Context ctx) {
+        super(ctx,DATABASE_NAME,null,DATABASE_VERSION);
+        mContext=ctx;
+    }
+
+    @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE Usuarios ('Codigo' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Nombre' VARCHAR(255))");
+        // Crear la tabla de Usuarios
+        sqLiteDatabase.execSQL("CREATE TABLE Usuarios ('Usuario' PRIMARY KEY " + "NOT NULL, 'Password' PASSWORD(255), 'Nombre' VARCHAR(255), 'Apellidos' VARCHAR(255)," + "'Cumpleanos' DATE)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
     }
 }

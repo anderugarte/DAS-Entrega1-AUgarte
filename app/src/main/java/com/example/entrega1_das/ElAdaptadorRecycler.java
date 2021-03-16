@@ -18,6 +18,8 @@ public class ElAdaptadorRecycler extends RecyclerView.Adapter<ElViewHolder> {
         seleccionado=new boolean[titulosPelis.length]; //Inicializar a false (nada elegido) un array de tantas posiciones como elementos se muestran
     }
 
+    @NonNull
+    @Override
     public ElViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View elLayoutDeCadaItem= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout,null);
         ElViewHolder evh = new ElViewHolder(elLayoutDeCadaItem);
@@ -30,6 +32,7 @@ public class ElAdaptadorRecycler extends RecyclerView.Adapter<ElViewHolder> {
         holder.txt.setText(titulos[position]);
         holder.img.setImageResource(imagenes[position]);
     }
+
     @Override
     public int getItemCount() {
         return titulos.length;
