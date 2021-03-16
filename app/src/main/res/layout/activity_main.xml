@@ -5,7 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".MainActivity">
+    tools:context=".RegistroInicioSesion.MainActivity">
+
+    <EditText
+        android:id="@+id/tFilmometry"
+        android:layout_width="266dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="52dp"
+        android:ems="10"
+        android:fontFamily="@font/contrail_one"
+        android:inputType="textPersonName"
+        android:text="FIlmometry"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/bIS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bR"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="159dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FF0000"
+        android:fontFamily="@font/contrail_one"
+        android:text="Registrarse"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bIS"
+        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/bIS"
@@ -21,20 +53,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
-
-    <Button
-        android:id="@+id/bR"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="159dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#FF0000"
-        android:fontFamily="@font/contrail_one"
-        android:text="Registrarse"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bIS"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.672" />
 </androidx.constraintlayout.widget.ConstraintLayout>

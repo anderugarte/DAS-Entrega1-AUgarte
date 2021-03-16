@@ -1,4 +1,4 @@
-package com.example.entrega1_das;
+package com.example.entrega1_das.Principal;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.entrega1_das.R;
 
 public class ElAdaptadorRecycler extends RecyclerView.Adapter<ElViewHolder> {
     private String[] titulos;

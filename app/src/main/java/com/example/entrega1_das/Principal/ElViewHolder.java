@@ -1,4 +1,4 @@
-package com.example.entrega1_das;
+package com.example.entrega1_das.Principal;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.entrega1_das.R;
 
 public class ElViewHolder extends RecyclerView.ViewHolder {
     public TextView txt;

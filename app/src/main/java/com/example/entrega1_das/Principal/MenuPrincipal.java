@@ -1,11 +1,12 @@
-package com.example.entrega1_das;
+package com.example.entrega1_das.Principal;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+
+import com.example.entrega1_das.R;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -15,8 +16,8 @@ public class MenuPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal);
         RecyclerView rv = (RecyclerView) findViewById(R.id.lPelis);
 
-        int[] imagenes = {R.drawable.origen};
-        String[] titulos = {"Origen"};
+        int[] imagenes = {R.drawable.dosmildoce,R.drawable.fury,R.drawable.guerramundialz,R.drawable.interestellar,R.drawable.origen,R.drawable.projectx,R.drawable.shutterisland};
+        String[] titulos = {"2012","Fury (Corazones de Acero)","Guerra Mundial Z","Interestellar","Origen","Project X","Shutter Island"};
 
         ElAdaptadorRecycler elAdaptador = new ElAdaptadorRecycler(titulos,imagenes);
         rv.setAdapter(elAdaptador);
