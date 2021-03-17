@@ -7,28 +7,41 @@
     android:background="#000000"
     tools:context=".Principal.MenuPrincipal">
 
-    <EditText
-        android:id="@+id/ptFilmometry"
-        android:layout_width="94dp"
-        android:layout_height="47dp"
-        android:ems="10"
+    <Button
+        android:id="@+id/bEC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#FF0000"
         android:fontFamily="@font/contrail_one"
-        android:inputType="textPersonName"
-        android:text="Filmometry"
-        android:textColor="#FF0404"
-        android:textColorHighlight="#FF5722"
+        android:foregroundTint="#FFFFFF"
+        android:text="Eliminar Cuenta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        android:importantForAutofill="no" />
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/bMDP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:fontFamily="@font/contrail_one"
+        android:foregroundTint="#FFFFFF"
+        android:text="Modificar Datos Personales"
+        app:layout_constraintBottom_toTopOf="@+id/bEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lPelis"
+        app:layout_constraintVertical_bias="0.696"
+        app:rippleColor="#FFFFFF" />
 
     <Button
         android:id="@+id/bCS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
         android:fontFamily="@font/contrail_one"
         android:foregroundTint="#FFFFFF"
         android:text="@string/cerrar_sesion"
@@ -50,6 +63,21 @@
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bCS"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tFilmometryTitulo"
+        android:layout_width="122dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/contrail_one"
+        android:text="Filmometry"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lPelis"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

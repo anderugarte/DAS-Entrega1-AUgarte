@@ -8,6 +8,18 @@
     tools:context=".RegistroInicioSesion.Registro">
 
     <TextView
+        android:id="@+id/tFilmometryTituloR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/contrail_one"
+        android:text="Filmometry"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/tCumple"
         android:layout_width="345dp"
         android:layout_height="31dp"
@@ -129,31 +141,16 @@
         android:id="@+id/bRegistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="84dp"
         android:backgroundTint="#FF0000"
         android:fontFamily="@font/contrail_one"
         android:text="Registrarse"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/tF"
+        app:layout_constraintBottom_toTopOf="@+id/tFilmometryTituloR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tFechaNac" />
-
-    <EditText
-        android:id="@+id/tF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/contrail_one"
-        android:inputType="textPersonName"
-        android:text="Filmometry"
-        android:textAlignment="center"
-        android:textColor="#FF0000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tFechaNac"
+        app:layout_constraintVertical_bias="0.144" />
 
     <EditText
         android:id="@+id/tPassword"
