@@ -1,6 +1,7 @@
 package com.example.entrega1_das.RegistroInicioSesion;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.entrega1_das.DataBase.miBD;
+import com.example.entrega1_das.Principal.ClaseDialogoFecha;
 import com.example.entrega1_das.R;
 
 public class Registro extends AppCompatActivity {
@@ -23,8 +25,16 @@ public class Registro extends AppCompatActivity {
         EditText apellidos = (EditText) findViewById(R.id.tpApellidos);
         EditText username = (EditText) findViewById(R.id.tpUsername);
         EditText contrasena = (EditText) findViewById(R.id.tPassword);
-        EditText cumple = (EditText) findViewById(R.id.tFechaNac);
+        Button bCumple = (Button) findViewById(R.id.bCumpleanos);
         Button bRegistro = (Button) findViewById(R.id.bRegistrarse);
+
+        bCumple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment dialogoCumple = new ClaseDialogoFecha();
+                dialogoCumple.show(getSupportFragmentManager(),"cumple");
+            }
+        });
 
         bRegistro.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,8 +23,14 @@ public class InicioSesion extends AppCompatActivity {
         bIniS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent is = new Intent (getBaseContext(), MenuPrincipal.class);
-                startActivity(is);
+                boolean correcto = false;
+
+                if (correcto) {
+                    Intent is = new Intent(getBaseContext(), MenuPrincipal.class);
+                    startActivity(is);
+                } else {
+
+                }
             }
         });
 

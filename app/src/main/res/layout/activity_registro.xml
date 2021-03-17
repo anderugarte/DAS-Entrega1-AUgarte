@@ -141,16 +141,15 @@
         android:id="@+id/bRegistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#FF0000"
         android:fontFamily="@font/contrail_one"
         android:text="Registrarse"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/tFilmometryTituloR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tFechaNac"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/tPassword"
@@ -164,15 +163,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tContrasena" />
 
-    <EditText
-        android:id="@+id/tFechaNac"
-        android:layout_width="340dp"
-        android:layout_height="40dp"
+    <Button
+        android:id="@+id/bCumpleanos"
+        android:layout_width="338dp"
+        android:layout_height="39dp"
         android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:inputType="date"
-        android:textColor="#FFFFFF"
+        android:fontFamily="@font/contrail_one"
+        android:text="Seleccionar fecha de nacimiento"
+        android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tCumple" />
 
