@@ -15,6 +15,9 @@ import com.example.entrega1_das.R;
 
 public class InicioSesion extends AppCompatActivity {
 
+    protected static int usuario;
+    protected int contrasenia;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,14 @@ public class InicioSesion extends AppCompatActivity {
                 String user = tUsername.getText().toString();
                 String pass = tPassword.getText().toString();
 
+                if (user.equalsIgnoreCase("") || pass.equalsIgnoreCase("")) {
+                    if (user.equalsIgnoreCase("")) {
+
+                    }
+                    if (pass.equalsIgnoreCase("")) {
+
+                    }
+                }
 
                 if (correcto) {
                     Intent is = new Intent(getBaseContext(), MenuPrincipal.class);

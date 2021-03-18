@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.entrega1_das.DataBase.miBD;
 import com.example.entrega1_das.Principal.ClaseDialogoFecha;
+import com.example.entrega1_das.Principal.MenuPrincipal;
 import com.example.entrega1_das.R;
 
 public class Registro extends AppCompatActivity {
@@ -50,22 +52,35 @@ public class Registro extends AppCompatActivity {
                 SQLiteDatabase bd = miBD.getInstance(getBaseContext()).getWritableDatabase();
                 boolean correcto = false;
 
+                // Obtenemos los campos introducidos por el usuario
                 String n = nombre.getText().toString();
                 String a = apellidos.getText().toString();
                 String u = username.getText().toString();
                 String p = contrasena.getText().toString();
-                //Date d = cumple.getText();
+                String d = mostrarC.getText().toString();
 
-                if (correcto){
-                    bd.execSQL("INSERT INTO Usuarios (Usuario,Password,Nombre,Apellidos,Cumpleanos) VALUES (u,p,n,a,d)");
-                    bd.close();
-                } else {
+                // Compruebo si algun campo esta vacio
+                if (n.length()==0 || a.length()==0 || u.length()==0 || p.length()==0 || d.length()==0) {
                     int tiempo= Toast.LENGTH_SHORT;
-                    Toast aviso = Toast.makeText(getApplicationContext(), "Campos incorrectos", tiempo);
+                    Toast aviso = Toast.makeText(getApplicationContext(), "Existen campos vacíos", tiempo);
                     aviso.setGravity(Gravity.BOTTOM| Gravity.CENTER, 0, 0);
                     aviso.show();
-                }
+                } else {
+                    // Ahora compruebo que si los campos introducidos son validos
+                    correcto = true;
 
+                    if (correcto) {
+                        bd.execSQL("INSERT INTO Usuarios (Usuario,Password,Nombre,Apellidos,Cumpleanos) VALUES (u,p,n,a,d)");
+                        bd.close();
+                        Intent mp = new Intent(getBaseContext(), MenuPrincipal.class);
+                        startActivity(mp);
+                    } else {
+                        int tiempo = Toast.LENGTH_SHORT;
+                        Toast aviso = Toast.makeText(getApplicationContext(), "Campos incorrectos", tiempo);
+                        aviso.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 0);
+                        aviso.show();
+                    }
+                }
             }
         });
     }
