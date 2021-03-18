@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.entrega1_das.R;
 
@@ -24,6 +26,14 @@ public class MenuPrincipal extends AppCompatActivity {
 
         LinearLayoutManager elLayoutLineal= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         rv.setLayoutManager(elLayoutLineal);
+
+        Button bElimC = (Button) findViewById(R.id.bEC);
+        bElimC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí haré un dialogo de si está seguro que desea eliminar su cuenta
+            }
+        });
     }
 
 }
