@@ -7,21 +7,6 @@
     android:background="#000000"
     tools:context=".RegistroInicioSesion.Registro">
 
-    <EditText
-        android:id="@+id/tMostrarFecha"
-        android:layout_width="340dp"
-        android:layout_height="40dp"
-        android:focusable="false"
-        android:clickable="true"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bCumpleanos" />
-
     <TextView
         android:id="@+id/tFilmometryTituloR"
         android:layout_width="wrap_content"
@@ -178,17 +163,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tContrasena" />
 
-    <Button
-        android:id="@+id/bCumpleanos"
-        android:layout_width="338dp"
-        android:layout_height="39dp"
+    <EditText
+        android:id="@+id/tMostrarCumple"
+        android:layout_width="342dp"
+        android:layout_height="41dp"
         android:backgroundTint="#FFFFFF"
+        android:clickable="true"
+        android:focusable="false"
         android:fontFamily="@font/contrail_one"
-        android:text="Seleccionar fecha de nacimiento"
-        android:textColor="#000000"
-        android:textSize="18sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tCumple" />
 

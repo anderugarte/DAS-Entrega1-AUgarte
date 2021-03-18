@@ -3,6 +3,7 @@ package com.example.entrega1_das.Principal;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -16,16 +17,10 @@ import java.util.Calendar;
 
 public class ClaseDialogoFecha extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
-    private DatePickerDialog.OnDateSetListener listener;
+    EditText cumple;
 
-    public static ClaseDialogoFecha newInstance(DatePickerDialog.OnDateSetListener listener) {
-        ClaseDialogoFecha fragment = new ClaseDialogoFecha();
-        fragment.setListener(listener);
-        return fragment;
-    }
-
-    public void setListener(DatePickerDialog.OnDateSetListener listener) {
-        this.listener = listener;
+    public ClaseDialogoFecha (EditText et) {
+        cumple = et;
     }
 
     @NonNull
@@ -41,5 +36,11 @@ public class ClaseDialogoFecha extends DialogFragment implements DatePickerDialo
     }
 
     @Override
-    public void onDateSet(DatePicker datePicker, int anyo, int mes, int dia) { }
+    public void onDateSet(DatePicker datePicker, int anyo, int mes, int dia) {
+        final String selectedDate = twoDigits(dia) + " / " + twoDigits(mes+1) + " / " + anyo;
+        cumple.setText(selectedDate);
+    }
+
+    private String twoDigits(int x) {return (x<10) ? ("0"+x) : String.valueOf(x);}
+
 }

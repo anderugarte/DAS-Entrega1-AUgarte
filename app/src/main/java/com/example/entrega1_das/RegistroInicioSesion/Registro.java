@@ -30,28 +30,17 @@ public class Registro extends AppCompatActivity {
         EditText apellidos = (EditText) findViewById(R.id.tpApellidos);
         EditText username = (EditText) findViewById(R.id.tpUsername);
         EditText contrasena = (EditText) findViewById(R.id.tPassword);
-        EditText mostrarF = (EditText) findViewById(R.id.tMostrarFecha);
-        Button bCumple = (Button) findViewById(R.id.bCumpleanos);
+        EditText mostrarC = (EditText) findViewById(R.id.tMostrarCumple);
         Button bRegistro = (Button) findViewById(R.id.bRegistrarse);
 
-        mostrarF.setOnClickListener(new View.OnClickListener() {
+        mostrarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case R.id.tMostrarFecha:
-                        showDatePickerDialog(mostrarF);
-                        //DialogFragment dialogoCumple = new ClaseDialogoFecha();
-                        //dialogoCumple.show(getSupportFragmentManager(),"cumple");
+                    case R.id.tMostrarCumple:
+                        showDatePickerDialog(mostrarC);
                         break;
                 }
-            }
-        });
-
-        bCumple.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment dialogoCumple = new ClaseDialogoFecha();
-                dialogoCumple.show(getSupportFragmentManager(),"cumple");
             }
         });
 
@@ -82,15 +71,8 @@ public class Registro extends AppCompatActivity {
     }
 
     private void showDatePickerDialog(final EditText editText) {
-        ClaseDialogoFecha newFragment = ClaseDialogoFecha.newInstance(new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int anyo, int mes, int dia) {
-                final String selectedDate = dia + " / " + (mes+1) + " / " + anyo;
-                Log.i("msgHola","recoge: " + dia + " / " + (mes+1) + " / " + anyo + "");
-                editText.setText(selectedDate);
-            }
-        });
-        newFragment.show(getSupportFragmentManager(), "datePicker");
+        ClaseDialogoFecha dialogoCumpleanos = new ClaseDialogoFecha(editText);
+        dialogoCumpleanos.show(getSupportFragmentManager(),"cumple");
     }
 
 }
