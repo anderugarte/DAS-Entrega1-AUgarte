@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,7 +51,6 @@ public class Registro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase bd = miBD.getInstance(getBaseContext()).getWritableDatabase();
-                boolean correcto = false;
 
                 // Obtenemos los campos introducidos por el usuario
                 String n = nombre.getText().toString();
@@ -65,20 +65,28 @@ public class Registro extends AppCompatActivity {
                     Toast aviso = Toast.makeText(getApplicationContext(), "Existen campos vacíos", tiempo);
                     aviso.setGravity(Gravity.BOTTOM| Gravity.CENTER, 0, 0);
                     aviso.show();
-                } else {
+                } else if (n.length()>0 & a.length()>0 & u.length()>0 & p.length()>0 & d.length()>0){
+                    Log.i("aaaa","Aqui llega");
                     // Ahora compruebo que si los campos introducidos son validos
-                    correcto = true;
-
-                    if (correcto) {
+                    Cursor c = bd.rawQuery("SELECT COUNT(*) FROM Usuarios WHERE Usuario=u",null); // Buscar si ya existe ese nombre de usuario
+                    int num = c.getInt(0);
+                    c.close();
+                    if (num!=0) {
+                        int tiempo = Toast.LENGTH_SHORT;
+                        Toast aviso = Toast.makeText(getApplicationContext(), "Username ya registrado", tiempo);
+                        aviso.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 0);
+                        aviso.show();
+                    } else if (p.length()<=4) {
+                        int tiempo = Toast.LENGTH_SHORT;
+                        Toast aviso = Toast.makeText(getApplicationContext(), "Contraseña demasiado corta", tiempo);
+                        aviso.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 0);
+                        aviso.show();
+                    } else {
+                        // Campos validos, se registra el usuario
                         bd.execSQL("INSERT INTO Usuarios (Usuario,Password,Nombre,Apellidos,Cumpleanos) VALUES (u,p,n,a,d)");
                         bd.close();
                         Intent mp = new Intent(getBaseContext(), MenuPrincipal.class);
                         startActivity(mp);
-                    } else {
-                        int tiempo = Toast.LENGTH_SHORT;
-                        Toast aviso = Toast.makeText(getApplicationContext(), "Campos incorrectos", tiempo);
-                        aviso.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 0);
-                        aviso.show();
                     }
                 }
             }
