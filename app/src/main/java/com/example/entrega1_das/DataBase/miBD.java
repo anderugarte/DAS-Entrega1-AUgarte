@@ -8,6 +8,8 @@ import androidx.annotation.Nullable;
 
 public class miBD extends SQLiteOpenHelper {
 
+    // Esta clase gestiona la BD de la aplicaion
+
     private static miBD mInstance = null;
 
     private static final String DATABASE_NAME = "FilmometryDB";

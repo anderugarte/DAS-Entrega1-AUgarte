@@ -26,6 +26,7 @@ public class MenuPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal);
         RecyclerView rv = (RecyclerView) findViewById(R.id.lPelis);
 
+        // Se asignan las imagenes y titulos de las peliculas del RecyclerView
         int[] imagenes = {R.drawable.dosmildoce,R.drawable.fury,R.drawable.guerramundialz,R.drawable.interestellar,R.drawable.origen,R.drawable.projectx,R.drawable.shutterisland};
         String[] titulos = {"2012","Fury (Corazones de Acero)","Guerra Mundial Z","Interestellar","Origen","Project X","Shutter Island"};
 
@@ -35,6 +36,7 @@ public class MenuPrincipal extends AppCompatActivity {
         LinearLayoutManager elLayoutLineal= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         rv.setLayoutManager(elLayoutLineal);
 
+        // Recibimos el nombre de usuario del usuario que ha iniciado sesion o se ha registrado
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             usernameUsuario = extras.getString("username");

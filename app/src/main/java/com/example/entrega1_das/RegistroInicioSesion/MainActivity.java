@@ -16,9 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Actividad principal de la aplicacion
         Button bIS = (Button) findViewById(R.id.bIS);
         Button bR = (Button) findViewById(R.id.bR);
 
+        // A traves de este boton se accedera a la interfaz para iniciar sesion
         bIS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // A traves de este boton se accedera a la interfaz para registrarse
         bR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,5 +37,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(r);
             }
         });
+
+        // No coviene realizar finish() ya que es posible que el usuario desee volver a esta interfaz
+
     }
 }

@@ -30,6 +30,7 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        // A traves de esta clase se gestionara el registro de un nuevo usuario
         EditText nombre = (EditText) findViewById(R.id.tpNombre);
         EditText apellidos = (EditText) findViewById(R.id.tpApellidos);
         EditText username = (EditText) findViewById(R.id.tpUsername);
@@ -37,6 +38,7 @@ public class Registro extends AppCompatActivity {
         EditText mostrarC = (EditText) findViewById(R.id.tMostrarCumple);
         Button bRegistro = (Button) findViewById(R.id.bRegistrarse);
 
+        // Al pulsar este EditText, desplegaremos un dialogo donde se podra seleccionar la fecha de nacimientop del usuario
         mostrarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +50,7 @@ public class Registro extends AppCompatActivity {
             }
         });
 
+        // Al pulsar este boton, se gestionara el registro del usuario
         bRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +101,7 @@ public class Registro extends AppCompatActivity {
                         bd.insert("Usuarios", null, nuevo);
                         bd.close();
                         Intent mp = new Intent(getBaseContext(), MenuPrincipal.class);
+                        mp.putExtra("username",u);
                         startActivity(mp);
                         finish();
                     }
@@ -106,6 +110,8 @@ public class Registro extends AppCompatActivity {
         });
     }
 
+    // Este metodo nos ayuda a desplegar el dialogo para la seleccion de la fecha de nacimiento y nos permite enviar
+    // el EditText por parametro para una vez obtenida la fecha poder realizar un .setText("fecha") en el
     private void showDatePickerDialog(final EditText editText) {
         ClaseDialogoFecha dialogoCumpleanos = new ClaseDialogoFecha(editText);
         dialogoCumpleanos.show(getSupportFragmentManager(),"cumple");

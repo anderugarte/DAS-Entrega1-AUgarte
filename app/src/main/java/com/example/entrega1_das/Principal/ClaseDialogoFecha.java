@@ -17,6 +17,8 @@ import java.util.Calendar;
 
 public class ClaseDialogoFecha extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
+    // Empleamos esta clase para generar el dialogo que nos devuelva un calendario
+
     EditText cumple;
 
     public ClaseDialogoFecha (EditText et) {
@@ -35,12 +37,15 @@ public class ClaseDialogoFecha extends DialogFragment implements DatePickerDialo
         return eldialogo;
     }
 
+    // Ahora establecemos la fecha seleccionada por el usuario en el EditText
     @Override
     public void onDateSet(DatePicker datePicker, int anyo, int mes, int dia) {
         final String selectedDate = twoDigits(dia) + " / " + twoDigits(mes+1) + " / " + anyo;
         cumple.setText(selectedDate);
     }
 
+    // Este metodo resulta de gran ayuda para escribir los digitos de un solo valor con un 0 por
+    // delante, es decir, si el usuario nacio un dia 7, este metodo nos guardara dicho dia como 07
     private String twoDigits(int x) {return (x<10) ? ("0"+x) : String.valueOf(x);}
 
 }
