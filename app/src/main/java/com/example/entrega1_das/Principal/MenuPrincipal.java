@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.entrega1_das.R;
+import com.example.entrega1_das.RegistroInicioSesion.MainActivity;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -27,6 +29,17 @@ public class MenuPrincipal extends AppCompatActivity {
         LinearLayoutManager elLayoutLineal= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         rv.setLayoutManager(elLayoutLineal);
 
+        // Cerrar sesion
+        Button bCerrar = (Button) findViewById(R.id.bCS);
+        bCerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cs = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(cs);
+            }
+        });
+
+        // Eliminar cuenta
         Button bElimC = (Button) findViewById(R.id.bEC);
         bElimC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,5 +48,4 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
     }
-
 }
