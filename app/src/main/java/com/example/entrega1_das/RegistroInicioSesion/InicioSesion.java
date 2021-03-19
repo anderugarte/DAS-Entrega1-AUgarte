@@ -80,9 +80,9 @@ public class InicioSesion extends AppCompatActivity {
                     // Si se ha encontrado el username, comprobamos si la contraseña es correcta o no
                     if (existeU) {
                         String[] campos2 = new String[] {"Password"};
-                        String[] argumentos2 = new String[] {pass};
+                        String[] argumentos2 = new String[] {user, pass};
                         // Falta anadir el username !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                        Cursor cu = bd.query("Usuarios",campos2,"Password=?",argumentos2,null,null,null); // Buscar si existe un usuario registrado con ese username y contrasena en la BD
+                        Cursor cu = bd.query("Usuarios",campos2,"Usuario=? AND Password=?",argumentos2,null,null,null); // Buscar si existe un usuario registrado con ese username y contrasena en la BD
                         int cod2=0; // Se utilizara para comprobar si ya existe un usuario registrado con ese username y contrasena
                         while (cu.moveToNext()) {
                             String pas = cu.getString(0);
