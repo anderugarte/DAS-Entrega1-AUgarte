@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:backgroundTint="#000000">
+
+    <TextView
+        android:id="@+id/tFilmometry"
+        android:layout_width="266dp"
+        android:layout_height="82dp"
+        android:ems="10"
+        android:fontFamily="@font/contrail_one"
+        android:inputType="textPersonName"
+        android:text="Filmometry"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155" />
+
+    <Button
+        android:id="@+id/bR"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="159dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FF0000"
+        android:fontFamily="@font/contrail_one"
+        android:text="Registrarse"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bIS"
+        app:layout_constraintVertical_bias="0.198" />
+
+    <Button
+        android:id="@+id/bIS"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="159dp"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FF0000"
+        android:fontFamily="@font/contrail_one"
+        android:text="Iniciar Sesión"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tFilmometry"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logofilmometry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

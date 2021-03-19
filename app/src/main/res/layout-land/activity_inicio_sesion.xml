@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <TextView
+        android:id="@+id/tFilmometryTituloIS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/contrail_one"
+        android:text="Filmometry"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/NombreUsu"
+        android:layout_width="345dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/contrail_one"
+        android:text="Nombre de Usuario"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <TextView
+        android:id="@+id/tPass"
+        android:layout_width="345dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/contrail_one"
+        android:text="Contraseña"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tpNombreUsu"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <EditText
+        android:id="@+id/tpNombreUsu"
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#F4F3F3"
+        android:ems="10"
+        android:fontFamily="@font/contrail_one"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@color/design_default_color_error"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NombreUsu"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bIniSes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:fontFamily="@font/contrail_one"
+        android:text="Iniciar Sesión"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.257" />
+
+    <Button
+        android:id="@+id/bNTC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:fontFamily="@font/contrail_one"
+        android:text="¿No tienes cuenta?"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bIniSes"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <EditText
+        android:id="@+id/tpPass"
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tPass"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
