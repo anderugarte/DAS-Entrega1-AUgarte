@@ -1,18 +1,24 @@
 package com.example.entrega1_das.Principal;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.entrega1_das.DataBase.miBD;
 import com.example.entrega1_das.R;
 import com.example.entrega1_das.RegistroInicioSesion.MainActivity;
 
 public class MenuPrincipal extends AppCompatActivity {
+
+    String usernameUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,11 @@ public class MenuPrincipal extends AppCompatActivity {
         LinearLayoutManager elLayoutLineal= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         rv.setLayoutManager(elLayoutLineal);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            usernameUsuario = extras.getString("username");
+        }
+
         // Cerrar sesion
         Button bCerrar = (Button) findViewById(R.id.bCS);
         bCerrar.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +55,32 @@ public class MenuPrincipal extends AppCompatActivity {
         bElimC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Aquí haré un dialogo de si está seguro que desea eliminar su cuenta
+                // Se genera un dialogo para preguntar si el usuario esta seguro de eliminar su cuenta
+                AlertDialog.Builder builder = new AlertDialog.Builder(MenuPrincipal.this);
+                builder.setTitle("Eliminar Cuenta");
+                builder.setMessage("¿Está seguro de eliminar su cuenta?");
+
+                builder.setNegativeButton("Eliminar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Eliminar cuenta
+                        SQLiteDatabase bd = miBD.getInstance(getBaseContext()).getWritableDatabase();
+                        String condition = "Usuario='"+usernameUsuario+"'";
+                        bd.delete("Usuarios",condition,null);
+                        bd.close();
+                        dialogInterface.cancel();
+                        Intent ec = new Intent(getBaseContext(), MainActivity.class);
+                        startActivity(ec);
+                        finish();
+                    }
+                });
+                builder.setPositiveButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.show();
             }
         });
     }

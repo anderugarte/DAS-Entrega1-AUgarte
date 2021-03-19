@@ -99,6 +99,7 @@ public class Registro extends AppCompatActivity {
                         bd.close();
                         Intent mp = new Intent(getBaseContext(), MenuPrincipal.class);
                         startActivity(mp);
+                        finish();
                     }
                 }
             }

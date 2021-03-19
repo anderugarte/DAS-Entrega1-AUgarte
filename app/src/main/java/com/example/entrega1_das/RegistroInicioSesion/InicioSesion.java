@@ -95,6 +95,7 @@ public class InicioSesion extends AppCompatActivity {
                     // Se crealiza la comprobacion final en base a los valores de los booleanos
                     if (existeUyP) { // Si existeUyP=TRUE, se ha encontrado un usuario con dichas credenciales y se inicia sesion
                         Intent is = new Intent(getBaseContext(), MenuPrincipal.class);
+                        is.putExtra("username",user);
                         startActivity(is);
                     } else if (existeU) { // Se ha encontrado un usuario con dicho username pero la contraseña es incorrecta
                         int tiempo= Toast.LENGTH_SHORT;
@@ -116,6 +117,7 @@ public class InicioSesion extends AppCompatActivity {
             public void onClick(View v) {
                 Intent re = new Intent (getBaseContext(), Registro.class);
                 startActivity(re);
+                finish();
             }
         });
     }
