@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -50,7 +51,6 @@ public class Registro extends AppCompatActivity {
         bRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLiteDatabase bd = miBD.getInstance(getBaseContext()).getWritableDatabase();
 
                 // Obtenemos los campos introducidos por el usuario
                 String n = nombre.getText().toString();
@@ -65,25 +65,37 @@ public class Registro extends AppCompatActivity {
                     Toast aviso = Toast.makeText(getApplicationContext(), "Existen campos vacíos", tiempo);
                     aviso.setGravity(Gravity.BOTTOM| Gravity.CENTER, 0, 0);
                     aviso.show();
-                } else if (n.length()>0 & a.length()>0 & u.length()>0 & p.length()>0 & d.length()>0){
-                    Log.i("aaaa","Aqui llega");
-                    // Ahora compruebo que si los campos introducidos son validos
-                    Cursor c = bd.rawQuery("SELECT COUNT(*) FROM Usuarios WHERE Usuario=u",null); // Buscar si ya existe ese nombre de usuario
-                    int num = c.getInt(0);
+                } else if (n.length()>0 && a.length()>0 && u.length()>0 && p.length()>0 && d.length()>0){
+                    // Ahora compruebo si los campos introducidos son validos
+                    SQLiteDatabase bd = miBD.getInstance(getBaseContext()).getWritableDatabase();
+                    String[] campos = new String[] {"Usuario"};
+                    String[] argumentos = new String[] {u};
+                    Cursor c = bd.query("Usuarios",campos,"Usuario=?",argumentos,null,null,null); // Buscar si ya existe ese nombre de usuario
+                    int num=0; // Se utilizara para comprobar si ya existe un usuario registrado con ese username
+                    while (c.moveToNext()) {
+                        String usu = c.getString(0);
+                        num++;
+                    }
                     c.close();
-                    if (num!=0) {
+                    if (num!=0) { // Si obtenemos != 0, significa que ya existe un usuario registrado con ese username
                         int tiempo = Toast.LENGTH_SHORT;
                         Toast aviso = Toast.makeText(getApplicationContext(), "Username ya registrado", tiempo);
                         aviso.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 0);
                         aviso.show();
-                    } else if (p.length()<=4) {
+                    } else if (p.length()<=4) { // La contrasena debe de tener mas de 4 caracteres
                         int tiempo = Toast.LENGTH_SHORT;
                         Toast aviso = Toast.makeText(getApplicationContext(), "Contraseña demasiado corta", tiempo);
                         aviso.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 0);
                         aviso.show();
                     } else {
                         // Campos validos, se registra el usuario
-                        bd.execSQL("INSERT INTO Usuarios (Usuario,Password,Nombre,Apellidos,Cumpleanos) VALUES (u,p,n,a,d)");
+                        ContentValues nuevo = new ContentValues();
+                        nuevo.put("Usuario", u);
+                        nuevo.put("Password", p);
+                        nuevo.put("Nombre", n);
+                        nuevo.put("Apellidos", a);
+                        nuevo.put("Cumpleanos", d);
+                        bd.insert("Usuarios", null, nuevo);
                         bd.close();
                         Intent mp = new Intent(getBaseContext(), MenuPrincipal.class);
                         startActivity(mp);
