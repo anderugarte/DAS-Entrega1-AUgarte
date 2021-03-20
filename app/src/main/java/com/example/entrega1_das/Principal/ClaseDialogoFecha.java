@@ -3,15 +3,12 @@ package com.example.entrega1_das.Principal;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-
-import com.example.entrega1_das.RegistroInicioSesion.Registro;
 
 import java.util.Calendar;
 
