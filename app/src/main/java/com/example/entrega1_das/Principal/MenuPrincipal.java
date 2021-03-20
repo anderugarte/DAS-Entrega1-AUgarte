@@ -59,10 +59,22 @@ public class MenuPrincipal extends AppCompatActivity {
             public void onClick(View v) {
                 Intent cs = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(cs);
+                finish();
             }
         });
 
-        // Eliminar cuenta
+        // Modificar los datos personales del usuario
+        Button bModificarD = (Button) findViewById(R.id.bMDP);
+        bModificarD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent md = new Intent(getBaseContext(), Modificar_Datos_Personales.class);
+                md.putExtra("username",usernameUsuario);
+                startActivity(md);
+            }
+        });
+
+        // Eliminar la cuenta del usuario
         Button bElimC = (Button) findViewById(R.id.bEC);
         bElimC.setOnClickListener(new View.OnClickListener() {
             @Override
