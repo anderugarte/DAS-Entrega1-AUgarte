@@ -28,10 +28,12 @@
         android:text="Fecha de Nacimiento"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tPassword"
+        app:layout_constraintVertical_bias="0.003" />
 
     <TextView
         android:id="@+id/tContrasena"
@@ -42,10 +44,12 @@
         android:text="Contraseña"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tpUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/tpUsername"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tUsername"
@@ -56,10 +60,12 @@
         android:text="Username"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tpApellidos" />
+        app:layout_constraintTop_toBottomOf="@+id/tpApellidos"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/tpUsername"
@@ -73,10 +79,12 @@
         android:textColor="#FFFFFF"
         android:textCursorDrawable="@color/design_default_color_error"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/tUsername"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tApellidos"
@@ -87,10 +95,12 @@
         android:text="Apellidos"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tpNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/tpNombre"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/tpApellidos"
@@ -104,10 +114,12 @@
         android:textColor="#FFFFFF"
         android:textCursorDrawable="@color/design_default_color_error"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tApellidos" />
+        app:layout_constraintTop_toBottomOf="@+id/tApellidos"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/tpNombre"
@@ -126,24 +138,27 @@
         android:textColorLink="#FF0000"
         android:textCursorDrawable="@color/design_default_color_error"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/tNombre"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tNombre"
         android:layout_width="345dp"
         android:layout_height="31dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/contrail_one"
         android:text="Nombre"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
 
     <Button
         android:id="@+id/bRegistrarse"
@@ -157,7 +172,9 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/tFilmometryTituloR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tMostrarCumple"
+        app:layout_constraintVertical_bias="0.942" />
 
     <EditText
         android:id="@+id/tPassword"
@@ -168,9 +185,12 @@
         android:inputType="textPassword"
         android:textColor="#FFFFFF"
         android:textCursorDrawable="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tContrasena" />
+        app:layout_constraintTop_toBottomOf="@+id/tContrasena"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/tMostrarCumple"
@@ -182,8 +202,11 @@
         android:fontFamily="@font/contrail_one"
         android:textColor="#FFFFFF"
         android:textCursorDrawable="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tCumple" />
+        app:layout_constraintTop_toBottomOf="@+id/tCumple"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

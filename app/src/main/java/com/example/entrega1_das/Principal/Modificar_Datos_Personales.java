@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.entrega1_das.DataBase.miBD;
 import com.example.entrega1_das.R;
@@ -31,7 +32,7 @@ public class Modificar_Datos_Personales extends AppCompatActivity {
         // A traves de esta clase se gestionara la modificacion de los datos personales de un usuario
         EditText nombreBD = (EditText) findViewById(R.id.tpNombreBD);
         EditText apellidosBD = (EditText) findViewById(R.id.tpApellidosBD);
-        EditText usernameBD = (EditText) findViewById(R.id.tpUsernameBD);
+        TextView usernameBD = (TextView) findViewById(R.id.tpUsernameBD);
         EditText contrasenaBD = (EditText) findViewById(R.id.tpPasswordBD);
         EditText mostrarCBD = (EditText) findViewById(R.id.tpMostrarCumpleBD);
         Button bRegistroBD = (Button) findViewById(R.id.bMDatosBD);
