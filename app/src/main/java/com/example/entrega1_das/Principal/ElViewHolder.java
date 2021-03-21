@@ -1,5 +1,6 @@
 package com.example.entrega1_das.Principal;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,9 +25,10 @@ public class ElViewHolder extends RecyclerView.ViewHolder {
                 if (seleccion[getAdapterPosition()]==true){ // Se comprueba si el usuario ha seleccionado dicha pelicula
                     seleccion[getAdapterPosition()]=false;
                     // Lo que debería hacer
+                    img.setColorFilter(null);
                 } else {
                     seleccion[getAdapterPosition()]=true; // La posicion del elemento seleccionado
-                    //
+                    img.setColorFilter(Color.RED);
                 }
             }
         });
