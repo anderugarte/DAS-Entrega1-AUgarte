@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_filmometry_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Principal.Modificar_Datos_Personales"></activity>
-        <activity android:name=".RegistroInicioSesion.InicioSesion"></activity>
+        <activity android:name=".Principal.Modificar_Datos_Personales" />
+        <activity android:name=".RegistroInicioSesion.InicioSesion" />
         <activity android:name=".RegistroInicioSesion.Registro" />
         <activity android:name=".Principal.MenuPrincipal" />
         <activity android:name=".RegistroInicioSesion.MainActivity">

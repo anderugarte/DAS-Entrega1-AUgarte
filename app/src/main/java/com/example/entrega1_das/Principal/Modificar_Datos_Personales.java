@@ -32,7 +32,7 @@ public class Modificar_Datos_Personales extends AppCompatActivity {
         // A traves de esta clase se gestionara la modificacion de los datos personales de un usuario
         EditText nombreBD = (EditText) findViewById(R.id.tpNombreBD);
         EditText apellidosBD = (EditText) findViewById(R.id.tpApellidosBD);
-        TextView usernameBD = (TextView) findViewById(R.id.tpUsernameBD);
+        TextView usernameBD = (TextView) findViewById(R.id.tpUsername2);
         EditText contrasenaBD = (EditText) findViewById(R.id.tpPasswordBD);
         EditText mostrarCBD = (EditText) findViewById(R.id.tpMostrarCumpleBD);
         Button bRegistroBD = (Button) findViewById(R.id.bMDatosBD);

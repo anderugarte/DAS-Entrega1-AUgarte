@@ -51,20 +51,6 @@
         app:layout_constraintVertical_bias="0.148" />
 
     <TextView
-        android:id="@+id/tUsername2"
-        android:layout_width="345dp"
-        android:layout_height="31dp"
-        android:fontFamily="@font/contrail_one"
-        android:text="Username"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
-
-    <TextView
         android:id="@+id/tContrasena2"
         android:layout_width="345dp"
         android:layout_height="31dp"
@@ -120,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tpUsernameBD"
+        app:layout_constraintTop_toBottomOf="@+id/tpUsername2"
         app:layout_constraintVertical_bias="0.023" />
 
     <EditText
@@ -197,7 +183,7 @@
         app:layout_constraintVertical_bias="0.025" />
 
     <TextView
-        android:id="@+id/tpUsernameBD"
+        android:id="@+id/tpUsername2"
         android:layout_width="341dp"
         android:layout_height="39dp"
         android:fontFamily="@font/contrail_one"
@@ -205,9 +191,24 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tUsername2"
+        app:layout_constraintTop_toBottomOf="@+id/tUserTitulo"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tUserTitulo"
+        android:layout_width="346dp"
+        android:layout_height="36dp"
+        android:fontFamily="@font/contrail_one"
+        android:text="Username"
+        android:textColor="#F8F8F8"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
