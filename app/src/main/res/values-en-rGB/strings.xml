@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Entrega1_DAS</string>
+    <string name="cerrar_sesion">Sign Out</string>
+    <string name="iniciar_sesi_n">Sign In</string>
+    <string name="registrarse">Sign Up</string>
+    <string name="no_tienes_cuenta">New to Filmometry?</string>
+    <string name="contrase_a">Password</string>
+    <string name="nombre_de_usuario">Username</string>
+    <string name="desea_acordarse_de_alguna_pel_cula_de_las_que_has_visto_en_la_cartelera">Would you like to remember any of the movies you have seen on the billboard?</string>
+    <string name="a_adir_notificaci_n">Add notification</string>
+    <string name="eliminar_cuenta">Delete Account</string>
+    <string name="modificar_datos_personales">Modify Personal Data</string>
+    <string name="oculte_las_pel_culas_ya_vistas">Hide the films already seen</string>
+    <string name="t_tulo_de_la_pel_cula">Movie Title</string>
+    <string name="fecha_de_nacimiento">Date of Birth</string>
+    <string name="username">Username</string>
+    <string name="apellidos">Surnames</string>
+    <string name="nombre">Name</string>
+    <string name="cancelar">Cancel</string>
+    <string name="modificar_datos">Modify Data</string>
+    <string name="cambiar_idioma">Cambiar Idioma</string>
+</resources>

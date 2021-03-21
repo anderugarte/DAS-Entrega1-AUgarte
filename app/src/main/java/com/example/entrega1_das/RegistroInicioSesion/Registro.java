@@ -8,6 +8,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -110,6 +112,23 @@ public class Registro extends AppCompatActivity {
     private void showDatePickerDialog(final EditText editText) {
         ClaseDialogoFecha dialogoCumpleanos = new ClaseDialogoFecha(editText);
         dialogoCumpleanos.show(getSupportFragmentManager(),"cumple");
+    }
+
+    // Gestiona el cambio de idioma
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menuopciones, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.cI) {
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
