@@ -3,7 +3,9 @@ package com.example.entrega1_das.RegistroInicioSesion;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -19,6 +21,8 @@ import com.example.entrega1_das.DataBase.miBD;
 import com.example.entrega1_das.Principal.ClaseDialogoFecha;
 import com.example.entrega1_das.Principal.MenuPrincipal;
 import com.example.entrega1_das.R;
+
+import java.util.Locale;
 
 public class Registro extends AppCompatActivity {
 
@@ -125,7 +129,27 @@ public class Registro extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.cI) {
-
+            Configuration configuration = getBaseContext().getResources().getConfiguration();
+            String l = configuration.getLocales().toString();
+            if (l.equals("[es_ES]")) {
+                Locale nuevaloc = new Locale("en");
+                Locale.setDefault(nuevaloc);
+                configuration.setLocale(nuevaloc);
+                configuration.setLayoutDirection(nuevaloc);
+                Context context = getBaseContext().createConfigurationContext(configuration);
+                getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+                finish();
+                startActivity(getIntent());
+            } else {
+                Locale nuevaloc = new Locale("es","GB");
+                Locale.setDefault(nuevaloc);
+                configuration.setLocale(nuevaloc);
+                configuration.setLayoutDirection(nuevaloc);
+                Context context = getBaseContext().createConfigurationContext(configuration);
+                getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+                finish();
+                startActivity(getIntent());
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);

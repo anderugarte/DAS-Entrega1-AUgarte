@@ -55,7 +55,7 @@
         android:layout_width="345dp"
         android:layout_height="31dp"
         android:fontFamily="@font/contrail_one"
-        android:text="Contraseña"
+        android:text="@string/contrase_a"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

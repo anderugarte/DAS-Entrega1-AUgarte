@@ -11,6 +11,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -27,6 +28,8 @@ import android.widget.Toast;
 import com.example.entrega1_das.DataBase.miBD;
 import com.example.entrega1_das.R;
 import com.example.entrega1_das.RegistroInicioSesion.MainActivity;
+
+import java.util.Locale;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -83,10 +86,24 @@ public class MenuPrincipal extends AppCompatActivity {
             public void onClick(View v) {
                 // Se genera un dialogo para preguntar si el usuario esta seguro de eliminar su cuenta
                 AlertDialog.Builder builder = new AlertDialog.Builder(MenuPrincipal.this);
-                builder.setTitle("Eliminar Cuenta");
-                builder.setMessage("¿Está seguro de eliminar su cuenta?");
+                Configuration configuration = getBaseContext().getResources().getConfiguration();
+                String l = configuration.getLocales().toString();
+                String txt1;
+                String txt2;
+                if (l.equals("[es_ES]")) {
+                    builder.setTitle("Eliminar Cuenta");
+                    builder.setMessage("¿Está seguro de eliminar su cuenta?");
+                    txt1 = "Eliminar";
+                    txt2 = "Cancelar";
+                } else {
+                    builder.setTitle("Delete Account");
+                    builder.setMessage("Are you sure to delete your account?");
+                    txt1 = "Delete";
+                    txt2 = "Cancel";
+                }
 
-                builder.setNegativeButton("Eliminar", new DialogInterface.OnClickListener() {
+
+                builder.setNegativeButton(txt1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         // Eliminar cuenta
@@ -100,7 +117,7 @@ public class MenuPrincipal extends AppCompatActivity {
                         finish();
                     }
                 });
-                builder.setPositiveButton("Cancelar", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(txt2, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
@@ -167,7 +184,27 @@ public class MenuPrincipal extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.cI) {
-
+            Configuration configuration = getBaseContext().getResources().getConfiguration();
+            String l = configuration.getLocales().toString();
+            if (l.equals("[es_ES]")) {
+                Locale nuevaloc = new Locale("en");
+                Locale.setDefault(nuevaloc);
+                configuration.setLocale(nuevaloc);
+                configuration.setLayoutDirection(nuevaloc);
+                Context context = getBaseContext().createConfigurationContext(configuration);
+                getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+                finish();
+                startActivity(getIntent());
+            } else {
+                Locale nuevaloc = new Locale("es","GB");
+                Locale.setDefault(nuevaloc);
+                configuration.setLocale(nuevaloc);
+                configuration.setLayoutDirection(nuevaloc);
+                Context context = getBaseContext().createConfigurationContext(configuration);
+                getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+                finish();
+                startActivity(getIntent());
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);
